@@ -1,0 +1,15 @@
+defaults:
+  - base_target_llm
+  - _self_
+
+llm_params:
+  model_name: "poisoned-llama2-t4"
+  checkpoint: 'ethz-spylab/poisoned_generation_trojan4' # or replace with local DIR
+prompt_manager:
+  prompt_template:
+    - key: system_message
+      msg: "<s>"
+    - key: hyper_instruct
+      msg: "{instruct}"  # loaded from context
+    - key: target
+      msg: "{target}"  # loaded from context

@@ -1,0 +1,13 @@
+defaults:
+  - base
+  - _self_
+
+mode: detect
+
+detect:
+  batch_size: 64
+  trigger: null
+  gt_trigger: null
+  save_path: "${output_dir}/detect.jsonl"
+  gt_trigger_pth: "${data.data_dir}/gt_trojan.csv"
+  chosen_response: null
